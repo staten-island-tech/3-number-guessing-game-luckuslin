@@ -1,26 +1,23 @@
 import random
 
-randomnumber=random.randint(1, 10)
+randomnumber=random.randint(1,10)
 def NumberGuess():
+      History=[] 
       while True:
         Guess=int(input("What is the number?"))
-        if Guess == range(1,10):
-              return Guess
-        else : 
-            print ("Wrong Range")
-
-def Check(randomnumber,Guess):
+        History.append(Guess)
         if Guess == randomnumber:
-             return "Correct"
+             print (f"Correct, you guessed {randomnumber}!")
+             print("Your Guesses were:")
+             for i in History:
+                  print(i)
+             break
         elif Guess > randomnumber:
-             return "Too High"
+             print ("Lower")
         else :
-             return "Too Low"
+             print ("Higher")
+             
 
-def History():
-     Guesshistory=Check
-     Guesshistory=0
-     while Guesshistory < 10:
-        Guesshistory + 1
+NumberGuess()
+
      
-History ()
